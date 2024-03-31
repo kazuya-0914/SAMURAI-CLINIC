@@ -1,0 +1,56 @@
+/* --- コンセプト --- */
+#concept {
+  position: relative;
+  padding-bottom: 8rem;
+  background: url('../../img/back-icon1.png') bottom right no-repeat;
+  @include media(sp) {
+    background-size: 50% 20%;
+  }
+  > h1 {
+    position: absolute;
+    top: 4rem;
+    left: 10%;
+    font-size: 8.5rem;
+    color: $l-gray;
+    opacity: 0.3;
+    @include z(h-text);
+    @include media(sp) {
+      top: 22rem;
+      left: 5%;
+      font-size: 5rem;
+    }
+  }
+  .content {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    > div:nth-of-type(2) {
+      text-align: right;
+    }
+    @include media(sp) {
+      grid-template-columns: 1fr;
+      > div:nth-of-type(1) {
+        order: 2;
+      }
+      > div:nth-of-type(2) {
+        order: 1;
+      }
+    }
+    h2:nth-of-type(1) {
+      @include headingIcon();
+    }
+    h1, h2:nth-of-type(2) {
+      padding-bottom: 2rem;
+    }
+    p {
+      padding-bottom: 1rem;
+    }
+    .btn {
+      margin-top: 1rem;
+      text-align: right;
+      @include media(sp) {
+        text-align: center;
+      }
+    }
+    @include detail();
+  }
+}

@@ -1,0 +1,15 @@
+/*--- トップページ ---*/
+/*--- ヘッダー ---*/
+@include header(top);
+
+// お知らせ
+@import "news";
+
+// コンセプト
+@import "concept";
+
+// コース料金
+@import "course";
+
+// お客様の声
+@import "voice";

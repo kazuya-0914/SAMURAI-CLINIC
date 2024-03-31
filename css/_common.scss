@@ -1,0 +1,81 @@
+/* --- 共通CSS--- */
+html {
+  font-size: 100%;
+}
+
+body {
+  letter-spacing: 0.1em;
+  font-family: $font-noto;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+h1, h2 {
+  color: $m-green;
+}
+h1 {
+  font-size: clamp(24px, 2.0vw, 32px);
+}
+h3 {
+  color: $d-green;
+}
+
+@include topBtn();
+
+// コンテンツラップ
+$size: (
+  100: 100%,
+  95: 95%,
+  80: 80%,
+  60: 60%,
+);
+@mixin wrap($size) {
+  @each $key, $value in $size {
+    .wrap-#{$key} {
+      margin: 0 auto;
+      width: $value;
+      @if $key == 80 {
+        max-width: 1280px;
+        @include media(sp) {
+          width: 90%;
+        }
+      }
+      @if $key == 60 {
+        max-width: 960px;
+        @include media(tb) {
+          width: 80%;
+        }
+      }
+    }
+  }
+}
+@include wrap($size);
+
+// z-index
+$name: (
+  h-text: -1,
+  content: 2,
+  m-text: 10,
+  semi-circle: 0,
+  header: 100,
+);
+@mixin z($key) {
+  z-index: map-get($name, $key);
+}
