@@ -1,0 +1,27 @@
+/* --- お客様の声（Voiceページ） --- */
+#voice-page {
+  .voice {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+    @include media(tb) {
+      grid-template-columns: 1fr;
+      justify-items: center;
+      align-items: center;
+    }
+    img {
+      border-radius: 50% 50%;
+      @include media(tb) {
+        gap: 1rem;
+        width: 60%;
+      }
+    }
+    h3 {
+      margin-bottom: 1rem;
+      @include media(tb) {
+        text-align: center;
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+/* --- お知らせ（Newsページ） --- */
+#news-page {
+  img {
+    border-radius: 20px;
+  }
+  li {
+    margin-left: -2rem;
+    line-height: 1em;
+  }
+  @include media(sp) {
+    h2, h3, h4 {
+      font-size: 24px;
+    }
+  }
+  /* --- お知らせ詳細 --- */
+  .news {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 3fr 1fr;
+    @include media(sp) {
+      grid-template-columns: 1fr;
+    }
+    section {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: 50% 50%;
+      @include media(sp) {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+  nav {
+    text-align: center;
+    margin-bottom: 8rem;
+    .sp {
+      display: none;
+    }
+    @include media(sp) {
+      width: 100%;
+      .pc {
+        display: none;
+      }
+      .sp {
+        display: inline;
+      }
+    }
+  }
+}

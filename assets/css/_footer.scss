@@ -1,0 +1,83 @@
+/*--- フッター ---*/
+#footer {
+  background-color: $l-green;
+  > h2 {
+    text-align: center;
+    padding-bottom: 2rem;
+    @include headerDeco();
+  }
+  .content {
+    max-width: 960px;
+    display: flex;
+    gap: 2rem;
+    @include media(tb) {
+      flex-direction: column;
+    }
+    margin-bottom: 4rem;
+    justify-content: space-between;
+    h2 {
+      padding-bottom: 1rem;
+      > span {
+        font-size: 0.8em;
+      }
+    }
+    ul {
+      padding-bottom: 1rem;
+      list-style: none;
+    }
+    img {
+      padding-bottom: 1rem;
+    }
+    @include inquiry($green, $d-green);
+    @include media(tb) {
+      iframe {
+        margin-top: 1rem;
+        width: 100%;
+      }
+    }
+  }
+
+  .nav {
+    display: flex;
+    @include media(tb) {
+      flex-direction: column;
+      row-gap: 1rem;
+    }
+    justify-content: space-between;
+    align-items: center;
+    @include media(sp) {
+      flex-direction: column;
+      gap: 1.5em;
+    }
+    font-size: 0.8rem;
+    max-width: 960px;
+    margin-bottom: 2rem;
+    nav {
+      display: flex;
+      @include media(sp) {
+        flex-direction: column;
+        text-align: center;
+      }
+      gap: 1.5em;
+      > ul {
+        display: flex;
+        align-items: center;
+        gap: 2em;
+        @include media(tb) {
+          flex-direction: column;
+          row-gap: 1rem;
+        }
+        a {
+          color: $d-green;
+        }
+      }
+    }
+  }
+  small {
+    display: block;
+    text-align: center;
+    padding: 0.5rem 0;
+    color: $white;
+    background-color: $m-green;
+  }
+}

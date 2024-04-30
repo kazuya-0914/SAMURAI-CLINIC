@@ -1,0 +1,20 @@
+/* --- コース・料金（Courseページ） --- */
+#course-page {
+  li {
+    list-style: disc;
+    line-height: 2em;
+  }
+  /* --- コース・料金 --- */
+  .course {
+    // CSSはtop/course.scssに記載
+    @include cource(sub);
+  }
+  /* --- 治療内容 --- */
+  .insurance, .self-pay{
+    // CSSはcommon.scssに記載
+    @include content1(sub2);
+    img {
+      border-radius: 20px
+    }
+  }
+}

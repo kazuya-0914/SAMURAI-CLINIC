@@ -1,0 +1,68 @@
+/*--- コース ---*/
+@mixin cource($value: top) {
+  position: relative;
+  padding-bottom: 8rem;
+  @if $value == top {
+    background: $l-green url('../../assets/img//back-icon2.png') right bottom 10% no-repeat;
+  }
+  @else {
+    background-color: $back-gray;
+  }
+  @include media(sp) {
+    background-size: 50% 20%;
+  }
+  > h1 {
+    position: absolute;
+    top: 4rem;
+    left: 10%;
+    z-index: 1;
+    font-size: 8.5rem;
+    color: $l-gray;
+    opacity: 0.3;
+    @include media(sp) {
+      top: 22rem;
+      left: 5%;
+      font-size: 5rem;
+    }
+  }
+  > h2 {
+    text-align: center;
+    padding-bottom: 2rem;
+    &:nth-of-type(1) {
+      @include headerDeco();
+    }
+  }
+  .content {
+    position: relative;
+    @include z(content);
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    @include media(sp) {
+      flex-direction: column;
+      align-items: center;
+    }
+    img, h3, ul {
+      margin-bottom: 1rem;
+    }
+    img {
+      border-radius: 20px;
+    }
+    li {
+      margin-left: 2rem;
+      line-height: 2rem;
+    }
+
+  }
+  @if $value == top {
+    .next-btn {
+      margin-top: 1rem;
+      text-align: center;
+      @include detail();
+    }
+  }
+}
+
+#course {
+  @include cource(top);
+}

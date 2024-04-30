@@ -1,0 +1,261 @@
+// お問い合わせボタン
+@mixin inquiry($c1: $green, $c2: $d-green) {
+  .inquiry {
+    display: inline-block;
+    @include media(tb) {
+      display: block;
+    }
+    padding: 0.8rem 1rem;
+    background-color: $c1;
+    border-radius: 5px;
+    text-align: center;
+    color: $white;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    a {
+      color: $white;
+    }
+    &:hover {
+      background-color: $c2;
+    }
+  }
+}
+
+// 詳細ボタン
+@mixin detail() {
+  .detail {
+    display: inline-block;
+    text-align: center;
+    padding: 0.5rem 1.5rem;
+    color: $d-green;
+    border: solid 1px $d-green;
+    border-radius: 5px;
+    transition: all 0.3s;
+    &:hover {
+      color: $white;
+      border: solid 1px $green;
+      background-color: $green;
+    }
+  }
+}
+
+// トップに戻るボタン
+@mixin topBtn() {
+  .top-btn {
+    position: fixed;
+    bottom: 4rem;
+    right: 2rem;
+    width: 4rem;
+    height: 4rem;
+    @include media(sp) {
+      width: 3rem;
+      height: 3rem;
+    }
+    z-index: 50;
+    display: none;
+  }
+}
+
+// 営業日時などカテゴリのタグ
+.category-tag {
+  display: inline-block;
+  padding: 0.2rem 0.8rem;
+  background-color: $m-green;
+  border-radius: 3px;
+  color: $white;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+//波形
+%wave {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 300% 150%;
+}
+.wave {
+  position: relative;
+  width: 100%;
+  height: 90px;
+  background-color: $l-green;
+  top: 0;
+  &::before {
+    @extend %wave;
+    width: 58%;
+    height: 100%;
+    background-color: $l-green;
+    right: 0;
+    top: -30%;
+  }
+  &::after {
+    @extend %wave;
+    width: 58%;
+    height: 100%;
+    background-color: $white;
+    left: 0;
+    top: -70%;
+  }
+}
+
+// 半円
+@mixin semi-circle() {
+  .semi-circle {
+    position: absolute;
+    top: 18rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    max-width: 640px;
+    height: 8rem;
+    @include media(tb) {
+      width: 60%;
+    }
+    @include media(sp) {
+      width: 80%;
+      height: 6rem;
+    }
+    border-radius: 100% 100% 0 0 / 200% 200% 0 0;
+    background-color: $white;
+    @include z(semi-circle);
+  }
+}
+
+// 見出し前後
+@mixin headerDeco() {
+  &::before {
+    content: '';
+    display: inline-block;
+    padding-right: 1.5em;
+    @include media(sp) {
+      padding-right: 1em;
+    }
+    height: 1em;
+    background: {
+      image: url('../../assets/img//head-left.png');
+      size: contain;
+      repeat: no-repeat;
+    }
+  }
+  &::after {
+    content: '';
+    display: inline-block;
+    padding-left: 1.5em;
+    @include media(sp) {
+      padding-left: 1em;
+    }
+    height: 1em;
+    background: {
+      image: url('../../assets/img//head-right.png');
+      size: contain;
+      position: right;
+      repeat: no-repeat;
+    }
+  }
+}
+
+// 見出しアイコン
+@mixin headingIcon() {
+  &::before {
+    content: '';
+    display: inline-block;
+    padding-right: 1.5em;
+    height: 1em;
+    background: {
+      image: url('../../assets/img//heading-icon.png');
+      size: contain;
+      repeat: no-repeat;
+    }
+  }
+}
+
+// ハンバーガーボタン
+@mixin hamburger() {
+  .hamburger {
+    display: none;
+    @include media(tb) {
+      display:flex;
+    }
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 3rem;
+    height: 3rem;
+    span {
+      display: inline-block;
+      position: absolute;
+      width: 60%;
+      height: 3px;
+      border-radius: 2px;
+      background-color: $g-green;
+      transition: all 0.3s;
+      &:nth-of-type(1) {
+        top: 1.0rem;
+      }
+      &:nth-of-type(2) {
+        top: 1.5rem;
+        opacity: 1;
+      }
+      &:nth-of-type(3) {
+        top: 2.0rem;
+      }
+    }
+    &.on {
+      span {
+        &:nth-of-type(1) {
+          top: 1.0rem;
+          transform: translateY(0.5rem) rotate(-45deg);
+        }
+        &:nth-of-type(2) {
+          opacity: 0;
+        }
+        &:nth-of-type(3) {
+          top: 1.0rem;
+          transform: translateY(0.5rem) rotate(45deg);
+        }
+      }
+    }
+  }
+}
+
+// パンくずリスト
+.breadcrumb {
+  a {
+    color: $d-green;
+  }
+}
+
+// ページネーション（投稿ページ）
+.pagination {
+  display: flex;
+  justify-content: center;
+  .nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+  }
+  .current, a {
+    text-align: center;
+    padding: 0 3px;
+  }
+  .current {
+    background-color: $m-green;
+    color: $white;
+  }
+}
+
+// ページネーション（固定ページ）
+ul.page-numbers {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  .current, a {
+    text-align: center;
+    padding: 0 3px;
+  }
+  .current {
+    background-color: $m-green;
+    color: $white;
+  }
+}

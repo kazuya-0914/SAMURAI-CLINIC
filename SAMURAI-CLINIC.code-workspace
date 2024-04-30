@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../Local Sites/samurai-clinic/app/public/wp-content/themes/samurai-clinic"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "SAMURAI-CLINIC",
+		"liveServer.settings.port": 5501
+	}
+}

@@ -1,0 +1,53 @@
+/* --- お知らせ --- */
+#news {
+  padding: 1rem;
+  margin-bottom: 4rem;
+  display: flex;
+  @include media(tb) {
+    flex-direction: column;
+  }
+  gap: 2rem;
+  .heading {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 20%;
+    @include media(tb) {
+      width: 100%;
+    }
+    > span {
+      color: $d-green;
+    }
+  }
+  .title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    @include media(tb) {
+      flex-direction: column;
+      row-gap: 2rem;
+    }
+    > dl {
+      width: 100%;
+      display: flex;
+      gap: 2rem;
+      .business {
+        margin-left: 0.5rem;
+        @include media(tb) {
+          display: block;
+          margin-top: 0.5rem;
+        }
+      }
+    }
+  }
+  .link {
+    text-align: right;
+    width: 40%;
+    @include media(tb) {
+      width: 100%;
+    }
+    a {
+      color: $d-green;
+    }
+  }
+}

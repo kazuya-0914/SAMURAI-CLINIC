@@ -1,0 +1,18 @@
+/*--- サブページ ---*/
+/*--- ヘッダー ---*/
+@include header(sub);
+
+// Aboutページ（当院について）
+@import "about-page";
+
+// Courseページ（コース・料金）
+@import "course-page";
+
+// Newsページ（お知らせ・お知らせ詳細）
+@import "news-page";
+
+// Voiceページ（お客様の声）
+@import "voice-page";
+
+// Contactページ（ご予約・お問い合わせ）
+@import "contact-page";

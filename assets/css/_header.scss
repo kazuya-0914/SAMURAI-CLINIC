@@ -1,0 +1,77 @@
+// ヘッダー
+@mixin header($value: top) {
+  #header-#{$value} {
+    width: 100%;
+    font-size: 0.8rem;
+    padding: 0.5rem 0 0.5rem 0.5rem;
+    @include media(sp) {
+      padding: 0.5rem 0;
+    }
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    @include z(header);
+    > div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-pc > ul {
+      display: flex;
+      align-items: center;
+      gap: 2em;
+      a:not(.inquiry a) {
+        @if $value == top {
+          color: $white;
+        }
+        @else {
+          color: $d-green;
+        }
+      }
+      @include inquiry($d-green, $green);  /* お問い合わせボタン */
+      @include media(tb) {
+        display: none;
+      }
+    }
+    @include hamburger();
+  }
+  .nav-sp {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 70;
+    width: 100%;
+    height: 100vh;
+    ul {
+      padding-left: 0px;
+    }
+    li {
+      @include inquiry($d-green, $green);  /* お問い合わせボタン */
+      &:last-of-type a{
+        color: $white;
+        margin-bottom: 0;
+      }
+    }
+    .menu {
+      padding: 6rem 2rem 0;
+      background-color: $white;
+      height: 80%;
+      @include inquiry($d-green, $green);
+      h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+      a {
+        color: $d-green;
+        display: inline-block;
+        margin-bottom: 1rem;
+      }
+    }
+    .back {
+      height: 20%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+  }
+}
+

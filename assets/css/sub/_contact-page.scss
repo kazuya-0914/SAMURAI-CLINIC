@@ -1,0 +1,17 @@
+/* --- ご予約・お問い合わせページ --- */
+#contact-page, #contact-thanks-page {
+  // お問い合わせフォーム
+  .wpforms-submit-container {
+    text-align: center;
+  }
+  .contact {
+    margin-bottom: 8rem;
+    @include inquiry($green, $d-green);
+    .inquiry {
+      width: 30%;
+      @include media(tb) {
+        width: 100%;
+      }
+    }
+  }
+}
