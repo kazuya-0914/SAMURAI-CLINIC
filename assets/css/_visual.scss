@@ -1,6 +1,7 @@
 /* --- メインビジュアル --- */
 #main-visual {
   position: relative;
+  height: 65vh;
   .slide-main {
     overflow: hidden;
     text-align: center;
@@ -51,23 +52,18 @@
   .heading {
     font-family: $font-ship;
     position: absolute;
-    top: 7em;
-    @include media(tb) {
-      left: 0;
-      top: 5rem;
-    }
-    @include media(sp) {
-      left: -5%;
-      top: 2rem;
-    }
+    padding: 0 10%;
+    top: 50%;
+    transform: translateY(-50%);
     @include z(m-text);
     -ms-writing-mode: tb-rl;
     writing-mode: vertical-rl;
     background: url('../../assets/img//main-text1.png') top right no-repeat, url('../../assets/img//main-text2.png') bottom left no-repeat;
-    padding: 4rem;
     h1 {
       border-right: dashed 1px $m-green;
       font-size: 2rem;
+      min-height: 11.8em;
+      margin-bottom: 0px;
       @include media(sp) {
         font-size: 1.4rem;
       }

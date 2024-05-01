@@ -2,7 +2,7 @@
 #voice-page {
   .voice {
     display: grid;
-    grid-template-columns: 1fr 5fr;
+    grid-template-columns: auto 5fr;
     gap: 4rem;
     margin-bottom: 4rem;
     @include media(tb) {
@@ -14,7 +14,8 @@
       border-radius: 50% 50%;
       @include media(tb) {
         gap: 1rem;
-        width: 60%;
+        width: 50%;
+        height: auto;
       }
     }
     h3 {
